@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #unmatch{
+            display: none;
+            color: red;
+            font-size: 1.3em;
+        }
+        #match{display: none;
+            color: green;
+            font-size: 1.3em;
+        }
+        input{
+            width: 25%;
+            padding: 15px;
+        }
+        button{
+            background-color: black;
+            padding: 20px;
+            color: white;
+            width: 25%;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="password" id="inp1" placeholder="Enter your password">
+    <br><br>
+    <input type="password" id="inp2" placeholder="Renter your password">
+    <br>
+    <br>
+    <div id="unmatch">Password must be matched</div>
+    <div id="match">Password matched</div>
+    <br>
+    <button id="button">ClickMe</button>
+    <script>
+        var input1 = document.getElementById("inp1");
+        var input2 = document.getElementById("inp2");
+        var btn = document.getElementById("button");
+        var match = document.getElementById("match");
+        var unmatch = document.getElementById("unmatch");
+        btn.addEventListener("click",function(){
+            if(input1.value == input2.value){
+                match.style.display="block";
+                unmatch.style.display="none";
+                input1.value="";
+                input2.value="";
+            }else{
+                unmatch.style.display="block";
+                match.style.display="none";
+                input1.value="";
+                input2.value="";
+            }
+        })
+    </script>
+</body>
+</html>
